@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MEDIPOD EXPRESS — Patients Record</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">MEDIPOD EXPRESS</div>
+    <p class="tag-small">HEALTHCARE ANYTIME, ANYWHERE</p>
+    <nav class="nav">
+      <a href="dashboard.html" class="nav-link">DASHBOARD</a>
+      <a href="inventory.html" class="nav-link">INVENTORY</a>
+      <a href="maintenance.html" class="nav-link">MAINTENANCE</a>
+      <a href="daily-operations.html" class="nav-link">DAILY OPERATIONS</a>
+      <a href="patients-record.html" class="nav-link active">PATIENTS RECORD</a>
+      <a href="about-us.html" class="nav-link">ABOUT US</a>
+      <a href="help.html" class="nav-link">HELP</a>
+      <a href="index.html" class="nav-link logout">LOG OUT</a>
+    </nav>
+  </aside>
+
+  <main class="main-area">
+    <header class="main-header">
+      <h2>PATIENTS RECORD</h2>
+    </header>
+
+    <section class="content">
+
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <input type="text" id="searchInput" placeholder="Search patient...">
+        <select id="genderFilter">
+          <option value="all">All Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <button onclick="openAddPatientModal()">Add Patient</button>
+      </div>
+
+      <!-- Patient Table -->
+      <div class="card">
+        <table id="patientTable">
+          <thead>
+            <tr>
+              <th>Patient ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Contact</th>
+              <th>Last Visit</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+    </section>
+  </main>
+</div>
+
+<!-- View Details Modal -->
+<div class="modal" id="detailsModal">
+  <div class="modal-content details-box">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+
+    <div class="profile-header">
+      <div style="display:flex; align-items:center; gap:15px;">
+        <img id="modalImage" src="https://via.placeholder.com/100" class="profile-img">
+
+        <div>
+          <h3 id="modalName"></h3>
+          <input type="file" id="editProfilePic" accept="image/*">
+        </div>
+      </div>
+
+      <div>
+        <button onclick="downloadPDF()">Download PDF</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h4>Personal Information</h4>
+
+      <label>Birthday</label>
+      <input type="date" id="editBirthday">
+
+      <label>Email</label>
+      <input type="email" id="editEmail">
+
+      <label>Emergency Contact</label>
+      <input type="text" id="editEmergency">
+
+      <label>Address</label>
+      <input type="text" id="editAddress">
+    </div>
+
+    <div class="section">
+      <h4>Medical Details</h4>
+
+      <label>Medical Conditions</label>
+      <textarea id="editConditions"></textarea>
+
+      <label>Allergies</label>
+      <textarea id="editAllergies"></textarea>
+
+      <label>Doctor Notes</label>
+      <textarea id="editNotes"></textarea>
+    </div>
+
+    <div class="section test-history">
+      <h4>Test History</h4>
+      <table id="testHistoryTable">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Test Type</th>
+            <th>Pod Number</th>
+            <th>Result</th>
+            <th>Technician</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button type="button" onclick="addTestRow()">Add Test</button>
+    </div>
+
+    <button class="save-btn" onclick="saveEdits()">Save Changes</button>
+  </div>
+</div>
+
+<!-- Add Patient Modal -->
+<div class="modal" id="addPatientModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeAddPatientModal()">&times;</span>
+    <h3>Add New Patient</h3>
+    <form id="addPatientForm">
+      <div style="display:flex;flex-direction:column;gap:10px;">
+
+        <input type="text" id="newPatientID" placeholder="Patient ID" required>
+        <input type="text" id="newPatientName" placeholder="Full Name" required>
+        <input type="number" id="newPatientAge" placeholder="Age" required>
+
+        <select id="newPatientGender" required>
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+        <input type="text" id="newPatientContact" placeholder="Contact Number" required>
+        <input type="date" id="newPatientLastVisit" required>
+
+        <select id="newPatientStatus" required>
+          <option value="Completed">Completed</option>
+          <option value="Pending">Pending</option>
+        </select>
+
+        <button type="submit" style="padding:8px 12px; background-color:#0a84c6; color:white; border:none; border-radius:6px; cursor:pointer;">Add Patient</button>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

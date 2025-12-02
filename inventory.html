@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MEDIPOD EXPRESS — Inventory</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f4f9ff;
+      margin: 0;
+    }
+
+    /* Layout fix */
+    .main-area {
+      padding: 25px;
+    }
+
+    /* HEADER */
+    .main-header h2 {
+      margin: 0 0 20px 0;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #022a5a;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #d9e6f2;
+    }
+
+    /* SUMMARY CARDS */
+    .summary-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+
+    .summary-card {
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      transition: 0.2s;
+      border-left: 6px solid #0a84c6;
+    }
+
+    .summary-card p {
+      margin: 5px 0;
+      color: #444;
+      font-weight: 600;
+    }
+
+    .summary-card .value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #022a5a;
+    }
+
+    .summary-card:hover {
+      transform: translateY(-3px);
+    }
+
+    /* MIDDLE ROW BOXES */
+    .middle-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .middle-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+      border: 1px solid #e8eef5;
+    }
+
+    .middle-card h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #0a4b81;
+      font-weight: 600;
+    }
+
+    /* INVENTORY TABLE */
+    .inventory-table-container {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    }
+
+    .inventory-table-container h3 {
+      margin: 0 0 10px 0;
+      color: #022a5a;
+      font-weight: 700;
+    }
+
+    .inventory-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .inventory-table th {
+      background: #0a84c6;
+      color: white;
+      padding: 12px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .inventory-table td {
+      padding: 12px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .inventory-table tr:nth-child(even) {
+      background: #f7fbff;
+    }
+  </style>
+</head>
+
+<body>
+<div class="app">
+
+  <!-- Sidebar (existing mo — untouched) -->
+  <aside class="sidebar">
+    <div class="brand">MEDIPOD EXPRESS</div>
+    <p class="tag-small">HEALTHCARE ANYTIME, ANYWHERE</p>
+    <nav class="nav">
+      <a href="dashboard.html" class="nav-link">DASHBOARD</a>
+      <a href="inventory.html" class="nav-link active">INVENTORY</a>
+      <a href="maintenance.html" class="nav-link">MAINTENANCE</a>
+      <a href="daily-operations.html" class="nav-link">DAILY OPERATIONS</a>
+      <a href="patients-record.html" class="nav-link">PATIENTS RECORD</a>
+      <a href="about-us.html" class="nav-link">ABOUT US</a>
+      <a href="help.html" class="nav-link">HELP</a>
+      <a href="index.html" class="nav-link logout">LOG OUT</a>
+    </nav>
+  </aside>
+
+  <main class="main-area">
+
+    <header class="main-header">
+      <h2>INVENTORY MODULE</h2>
+    </header>
+
+    <!-- Summary Cards -->
+    <div class="summary-row">
+      <div class="summary-card">
+        <p>Total Items in Stock</p>
+        <p class="value">1,250</p>
+      </div>
+      <div class="summary-card">
+        <p>Low Stock Items</p>
+        <p class="value">35</p>
+      </div>
+      <div class="summary-card">
+        <p>Expiring Soon</p>
+        <p class="value">45</p>
+      </div>
+      <div class="summary-card">
+        <p>Out of Stock</p>
+        <p class="value">20</p>
+      </div>
+    </div>
+
+    <!-- Middle Cards -->
+    <div class="middle-row">
+      <div class="middle-card"><h3>Item Categories</h3></div>
+      <div class="middle-card"><h3>Stock Monitoring</h3></div>
+      <div class="middle-card"><h3>Expiring Tracking</h3></div>
+      <div class="middle-card"><h3>Inventory Logs</h3></div>
+    </div>
+
+    <!-- Inventory Table -->
+    <div class="inventory-table-container">
+      <h3>Item List</h3>
+      <table class="inventory-table">
+        <thead>
+          <tr>
+            <th>Item Name</th>
+            <th>Category</th>
+            <th>Stock Quantity</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Paracetamol 500mg</td>
+            <td>Medicine</td>
+            <td>300</td>
+            <td>In Stock</td>
+          </tr>
+          <tr>
+            <td>Stethoscope</td>
+            <td>Equipment</td>
+            <td>100</td>
+            <td>In Stock</td>
+          </tr>
+          <tr>
+            <td>Hand Sanitizer</td>
+            <td>Consumables</td>
+            <td>15</td>
+            <td>Low Stock</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>

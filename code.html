@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MEDIPOD EXPRESS — Code</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+  <header class="topbar">
+    <div class="brand-small">MEDIPOD EXPRESS</div>
+  </header>
+
+  <main class="auth-page">
+    <div class="card auth-card">
+      <h2>Email Verification</h2>
+      <p>Enter the code we sent to your email</p>
+
+      <label>Email</label>
+      <input id="verifyEmail" type="email" placeholder="yourname@medipod.ph" />
+
+      <label>Code</label>
+      <input id="verifyCode" type="text" placeholder="6-digit code" />
+
+      <div class="row-between">
+        <button id="cancelCode" class="btn ghost">CANCEL</button>
+        <button id="submitCode" class="btn">CONTINUE</button>
+      </div>
+
+      <p class="muted">Resend code in <span id="timer">50</span>s</p>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

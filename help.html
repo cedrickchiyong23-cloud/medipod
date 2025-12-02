@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MEDIPOD EXPRESS — Help</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Inline CSS for horizontal help cards */
+    .content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .help-row {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .help-item {
+      flex: 1;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .help-item h3 {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #1a73e8;
+    }
+
+    .help-item p {
+      margin: 0;
+      font-size: 14px;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #1a73e8;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 14px;
+      color: #444;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">MEDIPOD EXPRESS</div>
+      <p class="tag-small">HEALTHCARE ANYTIME, ANYWHERE</p>
+
+      <nav class="nav">
+        <a href="dashboard.html" class="nav-link">DASHBOARD</a>
+        <a href="inventory.html" class="nav-link">INVENTORY</a>
+        <a href="maintenance.html" class="nav-link">MAINTENANCE</a>
+        <a href="daily-operations.html" class="nav-link">DAILY OPERATIONS</a>
+        <a href="patients-record.html" class="nav-link">PATIENTS RECORD</a>
+        <a href="about-us.html" class="nav-link">ABOUT US</a>
+        <a href="help.html" class="nav-link active">HELP</a>
+        <a href="index.html" class="nav-link logout">LOG OUT</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-area">
+
+      <header class="main-header">
+        <h2>HELP</h2>
+      </header>
+
+      <section class="content">
+
+        <!-- HORIZONTAL HELP ITEMS -->
+        <div class="help-row">
+          <div class="help-item">
+            <h3>1. How to change my password</h3>
+            <p>Go to Account Settings → Change Password → Enter current password → Enter new password → Save.</p>
+          </div>
+
+          <div class="help-item">
+            <h3>2. How to change my user photo</h3>
+            <p>Go to Account Settings → Change Avatar → Select image (max 1MB) → Submit.</p>
+          </div>
+
+          <div class="help-item">
+            <h3>3. How to update my personal info</h3>
+            <p>Profile → Account Settings → Edit personal information → Save. Confirmation will be sent via email.</p>
+          </div>
+        </div>
+
+        <!-- Terms of Use -->
+        <div class="card">
+          <h3>Terms of Use (Summary)</h3>
+          <p>By using this system, you agree to authorized use only. Do not share logins. Access is restricted per role. All actions are logged.</p>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MEDIPOD EXPRESS — Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+        <img src="assets/logo.png" class="logo" alt="Medipod Logo">
+      <div class="brand">MEDIPOD EXPRESS</div>
+      <p class="tag-small">HEALTHCARE ANYTIME, ANYWHERE</p>
+      <nav class="nav">
+        <a href="dashboard.html" class="nav-link active">DASHBOARD</a>
+        <a href="inventory.html" class="nav-link">INVENTORY</a>
+        <a href="maintenance.html" class="nav-link">MAINTENANCE</a>
+        <a href="daily-operations.html" class="nav-link">DAILY OPERATIONS</a>
+        <a href="patients-record.html" class="nav-link">PATIENTS RECORD</a>
+        <a href="about-us.html" class="nav-link">ABOUT US</a>
+        <a href="help.html" class="nav-link">HELP</a>
+        <a href="index.html" class="nav-link logout">LOG OUT</a>
+      </nav>
+    </aside>
+    <!-- PROFILE ICON (TOP RIGHT) -->
+    <div class="profile-icon" id="profileIcon">
+        <img src="assets/default-profile.png" class="top-profile" id="topProfileImg">
+    </div>
+
+    <!-- PROFILE DROPDOWN MENU -->
+    <div class="profile-menu" id="profileMenu">
+
+        <label class="profile-label">Profile Picture</label>
+        <input type="file" id="uploadProfile" accept="image/*">
+
+        <img src="assets/default-profile.png" class="profile-pic" id="profilePicPreview">
+
+        <label class="profile-label">Email</label>
+        <input type="text" id="profileEmail" disabled>
+
+        <label class="profile-label">Full Name</label>
+        <input type="text" id="profileName">
+
+        <label class="profile-label">Age</label>
+        <input type="number" id="profileAge">
+
+        <label class="profile-label">Address</label>
+        <input type="text" id="profileAddress">
+
+        <label class="profile-label">Contact Number</label>
+        <input type="text" id="profileContact">
+
+        <button class="btn" id="saveProfileBtn">Save Changes</button>
+    </div>
+    <main class="main-area">
+      <header class="main-header">
+        <h2>DASHBOARD</h2>
+      </header>
+
+      <section class="content-grid">
+        <div class="card info-card">Quick Stats / Widgets (placeholder)</div>
+        <div class="card info-card">Recent Activity (placeholder)</div>
+        <div class="card info-card">Shortcuts (placeholder)</div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

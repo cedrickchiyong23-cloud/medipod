@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MEDIPOD EXPRESS — Maintenance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Maintenance Page Custom Styles */
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px; /* space between summary and table */
+      padding: 20px;
+    }
+
+    .summary {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .summary-item {
+      flex: 1 1 150px;
+      background-color: #f0f4f8;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .summary-item .label {
+      font-weight: 600;
+      color: #555;
+    }
+
+    .summary-item .value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+
+    .equipment-list {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow-x: auto; /* para responsive table */
+    }
+
+    .equipment-list table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      min-width: 600px;
+    }
+
+    .equipment-list th, .equipment-list td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .equipment-list th {
+      background-color: #0a84c6;
+      color: white;
+    }
+
+    .equipment-list tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .main-header h2 {
+      margin: 0;
+      padding: 20px;
+      font-size: 1.8rem;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">MEDIPOD EXPRESS</div>
+      <p class="tag-small">HEALTHCARE ANYTIME, ANYWHERE</p>
+      <nav class="nav">
+        <a href="dashboard.html" class="nav-link">DASHBOARD</a>
+        <a href="inventory.html" class="nav-link">INVENTORY</a>
+        <a href="maintenance.html" class="nav-link active">MAINTENANCE</a>
+        <a href="daily-operations.html" class="nav-link">DAILY OPERATIONS</a>
+        <a href="patients-record.html" class="nav-link">PATIENTS RECORD</a>
+        <a href="about-us.html" class="nav-link">ABOUT US</a>
+        <a href="help.html" class="nav-link">HELP</a>
+        <a href="index.html" class="nav-link logout">LOG OUT</a>
+      </nav>
+    </aside>
+
+    <main class="main-area">
+      <header class="main-header">
+        <h2>MAINTENANCE MODULE</h2>
+      </header>
+      <section class="content">
+        <!-- Maintenance Module Summary -->
+        <div class="summary">
+          <div class="summary-item">
+            <p class="label">Total Equipment</p>
+            <p class="value">25</p>
+          </div>
+          <div class="summary-item">
+            <p class="label">Equipment Needing Maintenance</p>
+            <p class="value">5</p>
+          </div>
+          <div class="summary-item">
+            <p class="label">Under Repair</p>
+            <p class="value">2</p>
+          </div>
+          <div class="summary-item">
+            <p class="label">Scheduled Maintenance</p>
+            <p class="value">3</p>
+          </div>
+          <div class="summary-item">
+            <p class="label">Pods</p>
+            <p class="value">2332</p>
+          </div>
+        </div>
+
+        <!-- Equipment and Facility List -->
+        <div class="equipment-list">
+          <h3>Equipment and Facility List</h3>
+          <p>Preventive Maintenance</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Equipment Name</th>
+                <th>Category</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>Last Maintenance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>X-Ray Machine</td>
+                <td>Radiology</td>
+                <td>Radio</td>
+                <td>Under Repair</td>
+                <td>April 5, 2024</td>
+              </tr>
+              <tr>
+                <td>Ventilator</td>
+                <td>ICU</td>
+                <td>Ward 1</td>
+                <td>Scheduled</td>
+                <td>April 5, 2024</td>
+              </tr>
+              <tr>
+                <td>Air Conditioner</td>
+                <td>Facility</td>
+                <td>Lobby</td>
+                <td>Operational</td>
+                <td>April 5, 2024</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
